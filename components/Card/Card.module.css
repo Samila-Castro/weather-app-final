@@ -1,0 +1,20 @@
+.metricsWrapper {
+  flex: 1;
+  padding: 1rem 1rem;
+  background: rgba(182, 179, 226, 0.6);
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 14rem;
+  height: 6rem;
+}
+.metricsContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  height: 2rem;
+  width: 3rem;
+}
