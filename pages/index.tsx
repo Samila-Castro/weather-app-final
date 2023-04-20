@@ -83,6 +83,7 @@ export default function Home() {
       .get(`/current.json?key=d724e512212e458eb97213108231104&q=${inputValue}`)
       .then((response) => {
         const result = response.data;
+        setShowWarning(false);
         setState(result);
         setLoading(false);
       })
@@ -96,6 +97,7 @@ export default function Home() {
       )
       .then((response) => {
         const astronomyData = response.data;
+        setShowError(false);
         setStateAstronomy(astronomyData);
         setLoading(false);
       })
@@ -139,12 +141,17 @@ export default function Home() {
         handleDeleteCity={handleDeleteCityButton}
       />
       {showWarning && (
-        <Message showIcon type="warning" closable>
+        <Message
+          showIcon
+          type="warning"
+          onClose={() => setShowWarning(false)}
+          closable
+        >
           Enter a valid city name
         </Message>
       )}
       {showError && (
-        <Message type="error" closable>
+        <Message type="error" onClose={() => setShowError(false)} closable>
           This city doesn't exist
         </Message>
       )}
