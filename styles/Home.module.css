@@ -84,3 +84,9 @@
     padding: 0;
   }
 }
+
+@media (max-width: 320px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}
